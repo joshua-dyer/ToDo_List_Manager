@@ -13,6 +13,31 @@ const descriptionInput = document.getElementById("description-input");
 const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
 
+
+
+
+
+// Experimenting with taking and storing a username with this function:
+function getUserName() {                            // If a username is stored, load it
+  if(localStorage.getItem("userName") !== null){
+    document.getElementById("title-line").innerHTML = localStorage.getItem("userName") +"'s To-Do List";
+  } else{
+
+
+    let person = prompt("Please enter your name:", "Random Villager");
+   // document.getElementById("title-line").innerHTML = person +"'s To-Do List";
+    localStorage.setItem("userName", person);
+    document.getElementById("title-line").innerHTML = localStorage.getItem("userName") +"'s To-Do List";
+}
+}
+
+getUserName();
+
+
+
+
+
+
 const addOrUpdateTask = () => {
   addOrUpdateTaskBtn.innerText = "Add Task";
   const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
