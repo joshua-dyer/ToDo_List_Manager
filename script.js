@@ -17,7 +17,8 @@ let currentTask = {};
 
 // Experimenting with taking and storing a username with this function:
 function getUserName() {                            // If a username is stored, load it
-  if(localStorage.getItem("userName") !== null){
+  //if(localStorage.getItem("userName") !== null){
+  if(false){
     document.getElementById("title-line").innerHTML = localStorage.getItem("userName") +"'s To-Do List";
   } else{
                                                     // If no username is stored, save it
